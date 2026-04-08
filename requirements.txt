@@ -1,0 +1,27 @@
+# requirements.txt
+# ─────────────────────────────────────────────
+# All Python dependencies for PM-OS.
+#
+# Pin exact versions so builds are reproducible.
+# "pip install -r requirements.txt" installs everything.
+# ─────────────────────────────────────────────
+
+# Core data validation — used for all Pydantic models
+pydantic>=2.0.0,<3.0.0
+
+# OpenAI-compatible client for inference.py
+openai>=1.0.0,<2.0.0
+
+# YAML parser — for reading openenv.yaml if needed programmatically
+PyYAML>=6.0
+
+# FastAPI + Uvicorn — for exposing the /reset and /step HTTP endpoints
+# (required for HuggingFace Space deployment)
+fastapi>=0.110.0,<1.0.0
+uvicorn[standard]>=0.29.0,<1.0.0
+
+# Standard library extras (these come with Python 3.10+ but listed for clarity)
+# asyncio — built-in
+# typing  — built-in
+# copy    — built-in
+# random  — built-in

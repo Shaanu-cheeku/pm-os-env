@@ -1,0 +1,31 @@
+# openenv.yaml
+# ─────────────────────────────────────────────
+# OpenEnv environment configuration file.
+#
+# OpenEnv uses this to:
+#   1. Find your environment class (entrypoint)
+#   2. Know which tasks exist
+#   3. Validate your environment structure
+# ─────────────────────────────────────────────
+
+name: pm_os_env
+version: "1.0.0"
+
+# Python import path to your environment class
+# Format: module.submodule:ClassName
+entrypoint: my_env.env:PMEnv
+
+# The 3 tasks your environment supports
+tasks:
+  - bug_triage_easy
+  - sprint_planning_medium
+  - product_crisis_hard
+
+# Optional metadata
+description: >
+  PM-OS simulates the real-world workflow of a Product Manager.
+  Agents must prioritize features, fix bugs, manage sprint capacity,
+  respond to stakeholders, and maintain product metrics — all under
+  realistic resource constraints and delayed consequences.
+
+author: "Your Name"
