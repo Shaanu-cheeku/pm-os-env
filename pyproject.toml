@@ -1,0 +1,9 @@
+[project]
+name = "pm-os-env"
+version = "1.0.0"
+description = "PM-OS OpenEnv Environment"
+requires-python = ">=3.10"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.backends.legacy:build"
