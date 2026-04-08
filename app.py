@@ -80,18 +80,11 @@ async def list_tasks():
 
 
 @app.post("/reset", response_model=Observation)
-async def reset(request: ResetRequest):
-    """
-    Start a new episode.
-
-    Body: {"task_name": "bug_triage_easy"}
-    Returns: Observation (the initial state)
-
-    This is the first call an agent/validator makes.
-    """
+async def reset(request: Optional[ResetRequest] = None):
     global _env
-    _env = PMEnv(task_name=request.task_name)
-    obs = await _env.reset(request.task_name)
+    task = request.task_name if request else "bug_triage_easy"
+    _env = PMEnv(task_name=task)
+    obs = await _env.reset(task)
     return obs
 
 
